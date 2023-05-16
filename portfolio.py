@@ -169,7 +169,7 @@ if selectedNavbar =="projects":
      col1,col2=st.columns(2)
      with col1:
         st.header("[3.Todos](https://todosapp29.ccbp.tech/)")
-        st.video("todos.mp4")
+        st.video("Todos.mp4")
         st.write("")
         st.write("")
      st.write("""This is a Todos application which is used for Managing our tasks and schedules ,
