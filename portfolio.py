@@ -115,7 +115,7 @@ if (selectedNavbar == "Skills"):
         
           
           
-          for i in range(4):
+          for i in range(2):
                st.write("")
           langs=["Python","HTML","CSS","BOOTSTRAP","JAVA SCRIPT","Communication"]
           for i in langs:
