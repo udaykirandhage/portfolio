@@ -151,7 +151,7 @@ if selectedNavbar =="Contact":
             <input type="text" name="name"  placeholder="Your Name"required>
             <input type="email" name="email" placeholder="Your Gmail" required>
             <input type="text" name="number" placeholder="Your Number" required>
-            <textarea name="Address" placeholder=" write Your message"></textarea>
+            <textarea name="Your Message" placeholder=" write Your message"></textarea>
             <button type="submit">Send</button>
         </form> """
         st.markdown(contact_form,unsafe_allow_html=True)
