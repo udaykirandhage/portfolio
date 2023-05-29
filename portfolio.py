@@ -185,7 +185,7 @@ if selectedNavbar =="projects":
      col1,col2=st.columns(2)
      with col1:
         st.header("[1.SunriseAvenue](https://roombook.ccbp.tech/)")
-        st.video("vid1.mp4")
+        st.video("https://youtu.be/zeFQZcZ_eiU")
         st.write("")
         st.write("")
      st.write("""This is a static web app for Mobile phone users
