@@ -48,6 +48,7 @@ def load_lottieurl(url: str):
         return r.json()
 
 if(menu_id == "About"):
+    st.title("My Portfolio")
     st.write("")
     col1,col2=st.columns(2)
     with col2:
