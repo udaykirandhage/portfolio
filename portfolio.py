@@ -3,21 +3,51 @@ from streamlit_option_menu import option_menu
 from streamlit_lottie import st_lottie
 import requests
 from PIL import Image
+import streamlit as st
+import hydralit_components as hc
+import datetime
+
+#make it look nice from the start
+st.set_page_config(layout='wide',initial_sidebar_state='collapsed',)
+
+# specify the primary menu definition
+menu_data = [
+   
+   
+    
+    {'icon': "far fa-chart-bar", 'label':"Skills"},#no tooltip message
+   
+    {'icon': "fas fa-tachometer-alt", 'label':"Projects",'ttip':"I'm the Dashboard tooltip!"}
+    #{'icon': "far fa-copy", 'label':"Right End"},
+   # {'icon': "fa-solid fa-radar",'label':"Dropdown2", 'submenu':[{'label':"Sub-item 1", 'icon': "fa fa-meh"},{'label':"Sub-item 2"},{'icon':'🙉','label':"Sub-item 3",}]},
+]
+
+over_theme = {'txc_inactive': '#FFFFFF'}
+menu_id = hc.nav_bar(
+    menu_definition=menu_data,
+    override_theme=over_theme,
+    home_name='About',
+    login_name='Contact',
+    hide_streamlit_markers=False, #will show the st hamburger as well as the navbar now!
+    sticky_nav=True, #at the top or not
+    sticky_mode='pinned', #jumpy or not-jumpy, but sticky or pinned
+)
 
 
-st.set_page_config(page_title="Portfolio",layout="wide")
-st.title("My Porfolio")
+
+
+
+
+
+
+
 def load_lottieurl(url: str):
         r = requests.get(url)
         if r.status_code != 200:
             return None
         return r.json()
-selectedNavbar=option_menu(menu_title="",options=["About","Skills","projects","Contact"],orientation="horizontal",default_index=0,styles={
-            "container": {"padding": "3!important","width":"100%"},
-            "icon": {"color": "orange", "font-size": "15px"}, 
-            "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#E9DCCF","backgroundcolor":"transparent"}},)
 
-if(selectedNavbar == "About"):
+if(menu_id == "About"):
     st.write("")
     col1,col2=st.columns(2)
     with col2:
@@ -96,7 +126,7 @@ if(selectedNavbar == "About"):
     
    
       
-if (selectedNavbar == "Skills"):
+if (menu_id == "Skills"):
      
      st.header("My skills and Certifications")
      st.markdown("___________________________")
@@ -135,7 +165,7 @@ if (selectedNavbar == "Skills"):
      st.write("7. MTA ,Microsoft Technology"+" "+"  "+  "[View](https://www.credly.com/badges/2084a451-c4c6-40ec-aa50-5e726d47b285/linked_in_profile)")
      st.write("8. Python , Hacker rank"+" "+"  "+  "[View](https://www.hackerrank.com/certificates/8c72e766f85a)")
 
-if selectedNavbar =="Contact":
+if menu_id == "Contact":
         st.header(":mailbox: Mail me !")
         st.write("Lets Get Connected!")
         with st.sidebar:
@@ -165,7 +195,7 @@ if selectedNavbar =="Contact":
             with open(file_name) as f:
                 st.markdown(f"<style>{f.read()}</style>",unsafe_allow_html=True)
         local_css("style.css")
-if selectedNavbar =="projects":
+if menu_id == "Projects":
      st.write()
      st.header("Projects")
      col1,col2=st.columns(2)
@@ -185,7 +215,7 @@ if selectedNavbar =="projects":
      col1,col2=st.columns(2)
      with col1:
         st.header("[1.SunriseAvenue](https://roombook.ccbp.tech/)")
-        st.video("https://youtu.be/zeFQZcZ_eiU")
+        st.video("vid1.mp4")
         st.write("")
         st.write("")
      st.write("""This is a static web app for Mobile phone users
@@ -316,9 +346,5 @@ if selectedNavbar =="projects":
 
 
 
-
-
-    
-            
 
 
