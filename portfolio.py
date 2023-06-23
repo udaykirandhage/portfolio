@@ -268,7 +268,7 @@ if menu_id == "Projects":
         st.write("")
      col1,col2=st.columns(2)
      with col1:
-        st.header("[4.FoodMunch](https://foodmunch2920.ccbp.tech/)")
+        st.header("[4.FoodMunch](https://foodies29.ccbp.tech/)")
         st.video("foodmunch.mp4")
         st.write("")
         st.write("")
@@ -278,7 +278,7 @@ if menu_id == "Projects":
      st.write("* **Technologies used**  : HTML CSS BOOTSTRAP")
      
 
-     st.write("** *View This project Foodmunch app Here [View  Here!](https://foodmunch2920.ccbp.tech/)** *")
+     st.write("** *View This project Foodmunch app Here [View  Here!](https://foodies29.ccbp.tech/)** *")
 
 
      for i in range(3):
